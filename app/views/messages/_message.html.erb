@@ -3,7 +3,8 @@
     <strong>Body:</strong>
     <%= message.body %>
   </p>
-  <%= link_to 'Show Message', message_path(message)%>
-  <br>
-  <%= button_to "Destroy this message", @message, method: :delete %>
+  <p>
+    <%= button_to 'Edit Message', edit_message_path(message), method: :post%>
+    <%= button_to "Destroy this message", message_path(message), method: :delete %>
+  </p>
 </div>
