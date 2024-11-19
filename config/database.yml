@@ -1,0 +1,20 @@
+# Ensure the pg gem is defined in your Gemfile
+# gem "pg"
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+
+development:
+  <<: *default
+  database: turbo_rails_app_development
+
+test:
+  <<: *default
+  database: turbo_rails_app_test
+
+production:
+  <<: *default
+  database: turbo_rails_app_production
